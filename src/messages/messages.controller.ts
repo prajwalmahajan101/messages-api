@@ -1,5 +1,7 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 
+import { createMessage } from './dtos/create-messages.dto';
+
 // Created with the cli command
 // nest g controller messages/messages --flat
 // flat flag tells to not create am extra folder
@@ -12,7 +14,7 @@ export class MessagesController {
   }
 
   @Post()
-  createMessage(@Body() body: any) {
+  createMessage(@Body() body: createMessage) {
     return body;
   }
 
